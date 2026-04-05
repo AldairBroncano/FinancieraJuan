@@ -1,0 +1,63 @@
+body {
+  background: white;
+  min-height: 100vh;
+}
+
+/* NAVBAR */
+.custom-navbar {
+  background: linear-gradient(90deg, #020617, #0f172a);
+  border-bottom: 1px solid #1e293b;
+}
+
+/* LOGO */
+.navbar-brand {
+  color: #38bdf8 !important;
+  font-size: 18px;
+}
+
+/* LINKS */
+.nav-link {
+  color: #cbd5f5 !important;
+  transition: 0.2s;
+}
+
+.nav-link:hover {
+  color: #38bdf8 !important;
+}
+
+/* USUARIO */
+.user {
+  font-size: 14px;
+  color: #c6ccd3;
+}
+
+.card {
+  border-radius: 15px;
+  background: #e5e8eb;
+}
+
+input,
+select {
+  border-radius: 10px !important;
+}
+
+button {
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.02);
+}
+
+.btn-custom {
+  background: #38bdf8;
+  color: white;
+  border-radius: 16px;
+}
+
+.btn-custom:hover {
+  background: #020617;
+  color: #38bdf8;
+  border-color: #38bdf8;
+}

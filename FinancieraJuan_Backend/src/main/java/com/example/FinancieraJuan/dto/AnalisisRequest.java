@@ -6,7 +6,8 @@ import lombok.Data;
 public class AnalisisRequest {
 
     private double sueldo;
-    private int horasTrabadoDia;
+    private double ingresoExtra;
+    private int horasTrabajoDia;
     private int diasTrabajoMes;
     private TipoPersona tipoPersona;
     private Gastos gastos;

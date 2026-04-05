@@ -1,0 +1,203 @@
+<nav class="navbar navbar-expand-lg custom-navbar px-4">
+  <a class="navbar-brand fw-bold" href="#">Financiera Juan </a>
+
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-between" id="menu">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Analizador</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Historial</a>
+      </li>
+    </ul>
+
+    <div class="d-flex align-items-center gap-3">
+      <span class="user">👤 Invitado</span>
+      <button class="btn btn-sm btn-outline-light">Login</button>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-5">
+  <div class="card shadow-lg border-0 p-4">
+    <h4 class="mb-4 text-dark">Analizador de Vida</h4>
+
+    <div class="row g-4">
+      <!-- IZQUIERDA -->
+      <div class="col-md-6">
+        <h6 class="text-dark">Ingresos</h6>
+
+        <input
+          class="form-control mb-3"
+          placeholder="Sueldo"
+          type="number"
+          [ngModel]="data.sueldo"
+          (ngModelChange)="data.sueldo = $event"
+          [class.is-invalid]="!data.sueldo && intentoEnviar"
+        />
+
+        <input
+          class="form-control mb-3"
+          placeholder="Ingreso Extra"
+          type="number"
+          [ngModel]="data.ingresoExtra"
+          (ngModelChange)="data.ingresoExtra = $event"
+          [class.is-invalid]="!data.ingresoExtra && intentoEnviar"
+        />
+
+        <h6 class="text-dark">Tiempo de Trabajo</h6>
+
+        <input
+          class="form-control mb-3"
+          placeholder="Horas/día"
+          type="number"
+          [ngModel]="data.horasTrabajoDia"
+          (ngModelChange)="data.horasTrabajoDia = $event"
+          [class.is-invalid]="!data.horasTrabajoDia && intentoEnviar"
+        />
+
+        <input
+          class="form-control mb-3"
+          placeholder="Días/mes"
+          type="number"
+          [ngModel]="data.diasTrabajoMes"
+          (ngModelChange)="data.diasTrabajoMes = $event"
+          [class.is-invalid]="!data.diasTrabajoMes && intentoEnviar"
+        />
+
+        <select
+          [(ngModel)]="data.tipoPersona"
+          class="form-select"
+          [class.is-invalid]="!data.tipoPersona && intentoEnviar"
+        >
+          <option value="">Tipo persona</option>
+          <option value="DEPENDIENTE">Dependiente</option>
+          <option value="INDEPENDIENTE">Independiente</option>
+        </select>
+      </div>
+
+      <!-- DERECHA -->
+      <div class="col-md-6">
+        <h6 class="text-dark">Gastos</h6>
+
+        <input
+          class="form-control mb-3"
+          placeholder="Vivienda"
+          type="number"
+          [ngModel]="data.gastos.vivienda"
+          (ngModelChange)="data.gastos.vivienda = $event"
+          [class.is-invalid]="!data.gastos.vivienda && intentoEnviar"
+        />
+
+        <input
+          class="form-control mb-3"
+          placeholder="Comida"
+          type="number"
+          [ngModel]="data.gastos.comida"
+          (ngModelChange)="data.gastos.comida = $event"
+          [class.is-invalid]="!data.gastos.comida && intentoEnviar"
+        />
+
+        <input
+          class="form-control mb-3"
+          placeholder="Transporte"
+          type="number"
+          [ngModel]="data.gastos.transporte"
+          (ngModelChange)="data.gastos.transporte = $event"
+          [class.is-invalid]="!data.gastos.transporte && intentoEnviar"
+        />
+
+        <input
+          class="form-control mb-3"
+          placeholder="Ocio"
+          type="number"
+          [ngModel]="data.gastos.ocio"
+          (ngModelChange)="data.gastos.ocio = $event"
+          [class.is-invalid]="!data.gastos.ocio && intentoEnviar"
+        />
+
+        <input
+          class="form-control mb-3"
+          placeholder="Otros"
+          type="number"
+          [ngModel]="data.gastos.otros"
+          (ngModelChange)="data.gastos.otros = $event"
+        />
+      </div>
+
+      <!-- 
+      
+ <input
+        class="form-control mb-3"
+        placeholder="deuda Total"
+        type="number"
+        [ngModel]="data.deudaTotal"
+        (ngModelChange)="data.deudaToral = $event"
+      />
+      <input
+        class="form-control mb-3"
+        placeholder="ahorros"
+        type="number"
+        [ngModel]="data.ahorros"
+        (ngModelChange)="data.ahorros = $event"
+      />
+
+      <input
+        class="form-control mb-3"
+        placeholder="horas Libres"
+        type="number"
+        [ngModel]="data.horasLibresDia"
+        (ngModelChange)="data.horasLibresDia = $event"
+      />
+
+      -->
+    </div>
+
+    <button type="button" class="btn btn-custom mt-3" (click)="calcular()">Calcular</button>
+  </div>
+
+  <!-- RESULTADO -->
+  <div *ngIf="resultado" class="card mt-5 shadow-lg border-0 p-4">
+    <h4 class="mb-4 text-success">Resultado</h4>
+
+    <div class="row text-center g-3">
+      <div class="col-md-3">
+        <div class="p-3 bg-light rounded">
+          <strong>Ahorro</strong><br />
+          {{ resultado.ahorroMensual }}
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="p-3 bg-light rounded">
+          <strong>Estado</strong><br />
+          {{ resultado.estadoFinanciero }}
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="p-3 bg-light rounded">
+          <strong>Vida</strong><br />
+          {{ resultado.estadoVida }}
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="p-3 bg-light rounded">
+          <strong>Gasto Total</strong><br />
+          {{ resultado.gastoTotal }}
+        </div>
+      </div>
+    </div>
+
+    <p class="mt-4 text-center fw-semibold">
+      {{ resultado.mensajePrincipal }}
+    </p>
+
+    <button class="btn btn-success w-100 fw-bold" (click)="descargarPDF()">Descargar PDF</button>
+  </div>
+</div>
