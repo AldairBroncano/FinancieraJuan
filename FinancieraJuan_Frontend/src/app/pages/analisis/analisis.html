@@ -26,135 +26,233 @@
   <div class="card shadow-lg border-0 p-4">
     <h4 class="mb-4 text-dark">Analizador de Vida</h4>
 
-    <div class="row g-4">
+    <div class="isquierda">
       <!-- IZQUIERDA -->
-      <div class="col-md-6">
-        <h6 class="text-dark">Ingresos</h6>
 
-        <input
-          class="form-control mb-3"
-          placeholder="Sueldo"
-          type="number"
-          [ngModel]="data.sueldo"
-          (ngModelChange)="data.sueldo = $event"
-          [class.is-invalid]="!data.sueldo && intentoEnviar"
-        />
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseOne"
+              aria-expanded="false"
+              aria-controls="flush-collapseOne"
+            >
+              INGRESOS
+            </button>
+          </h2>
+          <div
+            id="flush-collapseOne"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              <input
+                class="form-control mb-3"
+                placeholder="Sueldo"
+                type="number"
+                [ngModel]="data.sueldo"
+                (ngModelChange)="data.sueldo = $event"
+                [class.is-invalid]="!data.sueldo && intentoEnviar"
+              />
 
-        <input
-          class="form-control mb-3"
-          placeholder="Ingreso Extra"
-          type="number"
-          [ngModel]="data.ingresoExtra"
-          (ngModelChange)="data.ingresoExtra = $event"
-          [class.is-invalid]="!data.ingresoExtra && intentoEnviar"
-        />
+              <input
+                class="form-control mb-3"
+                placeholder="Ingreso Extra"
+                type="number"
+                [ngModel]="data.ingresoExtra"
+                (ngModelChange)="data.ingresoExtra = $event"
+                [class.is-invalid]="!data.ingresoExtra && intentoEnviar"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTwo"
+              aria-expanded="false"
+              aria-controls="flush-collapseTwo"
+            >
+              GASTOS
+            </button>
+          </h2>
+          <div
+            id="flush-collapseTwo"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              <input
+                class="form-control mb-3"
+                placeholder="Vivienda"
+                type="number"
+                [ngModel]="data.gastos.vivienda"
+                (ngModelChange)="data.gastos.vivienda = $event"
+                [class.is-invalid]="!data.gastos.vivienda && intentoEnviar"
+              />
 
-        <h6 class="text-dark">Tiempo de Trabajo</h6>
+              <input
+                class="form-control mb-3"
+                placeholder="Comida"
+                type="number"
+                [ngModel]="data.gastos.comida"
+                (ngModelChange)="data.gastos.comida = $event"
+                [class.is-invalid]="!data.gastos.comida && intentoEnviar"
+              />
 
-        <input
-          class="form-control mb-3"
-          placeholder="Horas/día"
-          type="number"
-          [ngModel]="data.horasTrabajoDia"
-          (ngModelChange)="data.horasTrabajoDia = $event"
-          [class.is-invalid]="!data.horasTrabajoDia && intentoEnviar"
-        />
+              <input
+                class="form-control mb-3"
+                placeholder="Transporte"
+                type="number"
+                [ngModel]="data.gastos.transporte"
+                (ngModelChange)="data.gastos.transporte = $event"
+                [class.is-invalid]="!data.gastos.transporte && intentoEnviar"
+              />
 
-        <input
-          class="form-control mb-3"
-          placeholder="Días/mes"
-          type="number"
-          [ngModel]="data.diasTrabajoMes"
-          (ngModelChange)="data.diasTrabajoMes = $event"
-          [class.is-invalid]="!data.diasTrabajoMes && intentoEnviar"
-        />
+              <input
+                class="form-control mb-3"
+                placeholder="Ocio"
+                type="number"
+                [ngModel]="data.gastos.ocio"
+                (ngModelChange)="data.gastos.ocio = $event"
+                [class.is-invalid]="!data.gastos.ocio && intentoEnviar"
+              />
 
-        <select
-          [(ngModel)]="data.tipoPersona"
-          class="form-select"
-          [class.is-invalid]="!data.tipoPersona && intentoEnviar"
-        >
-          <option value="">Tipo persona</option>
-          <option value="DEPENDIENTE">Dependiente</option>
-          <option value="INDEPENDIENTE">Independiente</option>
-        </select>
+              <input
+                class="form-control mb-3"
+                placeholder="Otros"
+                type="number"
+                [ngModel]="data.gastos.otros"
+                (ngModelChange)="data.gastos.otros = $event"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseThree"
+              aria-expanded="false"
+              aria-controls="flush-collapseThree"
+            >
+              TIEMPO TRABAJO
+            </button>
+          </h2>
+          <div
+            id="flush-collapseThree"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              <input
+                class="form-control mb-3"
+                placeholder="Horas/día"
+                type="number"
+                [ngModel]="data.horasTrabajoDia"
+                (ngModelChange)="data.horasTrabajoDia = $event"
+                [class.is-invalid]="!data.horasTrabajoDia && intentoEnviar"
+              />
+
+              <input
+                class="form-control mb-3"
+                placeholder="Días/mes"
+                type="number"
+                [ngModel]="data.diasTrabajoMes"
+                (ngModelChange)="data.diasTrabajoMes = $event"
+                [class.is-invalid]="!data.diasTrabajoMes && intentoEnviar"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseFour"
+              aria-expanded="false"
+              aria-controls="flush-collapseFour"
+            >
+              DATOS
+            </button>
+          </h2>
+          <div
+            id="flush-collapseFour"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              <select
+                [(ngModel)]="data.tipoPersona"
+                class="form-select form-control mb-3"
+                [class.is-invalid]="!data.tipoPersona && intentoEnviar"
+              >
+                <option value="">Tipo persona</option>
+                <option value="DEPENDIENTE">Dependiente</option>
+                <option value="INDEPENDIENTE">Independiente</option>
+              </select>
+
+              <input
+                class="form-control mb-3"
+                placeholder="deuda Total"
+                type="number"
+                [ngModel]="data.deudaTotal"
+                (ngModelChange)="data.deudaToral = $event"
+              />
+              <input
+                class="form-control mb-3"
+                placeholder="ahorros"
+                type="number"
+                [ngModel]="data.ahorros"
+                (ngModelChange)="data.ahorros = $event"
+              />
+
+              <input
+                class="form-control mb-3"
+                placeholder="horas Libres"
+                type="number"
+                [ngModel]="data.horasLibresDia"
+                (ngModelChange)="data.horasLibresDia = $event"
+              />
+
+              <input
+                class="form-control mb-3"
+                placeholder="horas Libres"
+                type="number"
+                [ngModel]="data.nivelEstres"
+                (ngModelChange)="data.nivelEstres = $event"
+              />
+
+              <input
+                class="form-control mb-3"
+                placeholder="objetivo"
+                type="text"
+                [ngModel]="data.objetivo"
+                (ngModelChange)="data.objetivo = $event"
+              />
+
+              <input
+                class="form-control mb-3"
+                placeholder="Meses cubrir deuda"
+                type="text"
+                [ngModel]="data.mesesObjetivoDeuda"
+                (ngModelChange)="data.mesesObjetivoDeuda = $event"
+              />
+            </div>
+          </div>
+        </div>
       </div>
-
-      <!-- DERECHA -->
-      <div class="col-md-6">
-        <h6 class="text-dark">Gastos</h6>
-
-        <input
-          class="form-control mb-3"
-          placeholder="Vivienda"
-          type="number"
-          [ngModel]="data.gastos.vivienda"
-          (ngModelChange)="data.gastos.vivienda = $event"
-          [class.is-invalid]="!data.gastos.vivienda && intentoEnviar"
-        />
-
-        <input
-          class="form-control mb-3"
-          placeholder="Comida"
-          type="number"
-          [ngModel]="data.gastos.comida"
-          (ngModelChange)="data.gastos.comida = $event"
-          [class.is-invalid]="!data.gastos.comida && intentoEnviar"
-        />
-
-        <input
-          class="form-control mb-3"
-          placeholder="Transporte"
-          type="number"
-          [ngModel]="data.gastos.transporte"
-          (ngModelChange)="data.gastos.transporte = $event"
-          [class.is-invalid]="!data.gastos.transporte && intentoEnviar"
-        />
-
-        <input
-          class="form-control mb-3"
-          placeholder="Ocio"
-          type="number"
-          [ngModel]="data.gastos.ocio"
-          (ngModelChange)="data.gastos.ocio = $event"
-          [class.is-invalid]="!data.gastos.ocio && intentoEnviar"
-        />
-
-        <input
-          class="form-control mb-3"
-          placeholder="Otros"
-          type="number"
-          [ngModel]="data.gastos.otros"
-          (ngModelChange)="data.gastos.otros = $event"
-        />
-      </div>
-
-      <!-- 
-      
- <input
-        class="form-control mb-3"
-        placeholder="deuda Total"
-        type="number"
-        [ngModel]="data.deudaTotal"
-        (ngModelChange)="data.deudaToral = $event"
-      />
-      <input
-        class="form-control mb-3"
-        placeholder="ahorros"
-        type="number"
-        [ngModel]="data.ahorros"
-        (ngModelChange)="data.ahorros = $event"
-      />
-
-      <input
-        class="form-control mb-3"
-        placeholder="horas Libres"
-        type="number"
-        [ngModel]="data.horasLibresDia"
-        (ngModelChange)="data.horasLibresDia = $event"
-      />
-
-      -->
     </div>
 
     <button type="button" class="btn btn-custom mt-3" (click)="calcular()">Calcular</button>
