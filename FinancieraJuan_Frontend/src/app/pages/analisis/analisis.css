@@ -3,6 +3,10 @@ body {
   min-height: 100vh;
 }
 
+.container {
+  max-width: 1200px;
+}
+
 /* NAVBAR */
 .custom-navbar {
   background: linear-gradient(90deg, #020617, #0f172a);
@@ -21,6 +25,48 @@ body {
   transition: 0.2s;
 }
 
+.hero-container {
+  display: flex;
+  height: 90vh;
+}
+
+/* IZQUIERDA */
+.hero-left {
+  width: 50%;
+  background: #366185;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+}
+
+.hero-left h1 {
+  font-size: 42px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hero-left p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* DERECHA */
+.hero-right {
+  width: 50%;
+}
+
+.hero-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.row {
+  align-items: flex-start;
+}
+
 .nav-link:hover {
   color: #38bdf8 !important;
 }
@@ -32,8 +78,11 @@ body {
 }
 
 .card {
-  border-radius: 10px;
+  border-radius: 9px;
   background: #e5e8eb;
+}
+
+.I {
 }
 
 input,
@@ -60,4 +109,16 @@ button:hover {
   background: #020617;
   color: #38bdf8;
   border-color: #38bdf8;
+}
+
+footer {
+  background: linear-gradient(90deg, #294b66, #2f5675);
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #38bdf8;
 }

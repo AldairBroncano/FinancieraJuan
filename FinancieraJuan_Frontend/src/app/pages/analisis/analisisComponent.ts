@@ -37,7 +37,14 @@ export class AnalisisComponent {
     mesesObjetivoDeuda: null,
   };
 
-  resultado: any;
+  resultado = {
+    ahorroMensual: 0,
+    estadoFinanciero: '-',
+    estadoVida: '-',
+    gastoTotal: 0,
+    mensajePrincipal: 'Completa los datos y presiona calcular',
+  };
+
   intentoEnviar = false;
 
   constructor(private service: AnalisisService) {}
@@ -93,6 +100,13 @@ export class AnalisisComponent {
         console.error('ERROR BACKEND:', err);
       },
     });
+  }
+
+  irAnalizador() {
+    const seccion = document.getElementById('analizador');
+    if (seccion) {
+      seccion.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 
   descargarPDF() {

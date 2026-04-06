@@ -22,280 +22,343 @@
   </div>
 </nav>
 
-<div class="container mt-5">
-  <div class="card shadow-lg border-0 p-4">
-    <h4 class="mb-4 text-dark">Analizador de Vida</h4>
+<div class="hero-container">
+  <div class="hero-left">
+    <h1>Calculadora de gastos y presupuesto familiar</h1>
 
-    <div class="isquierda">
-      <!-- IZQUIERDA -->
-
-      <div class="accordion accordion-flush" id="accordionFlushExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseOne"
-              aria-expanded="false"
-              aria-controls="flush-collapseOne"
-            >
-              INGRESOS
-            </button>
-          </h2>
-          <div
-            id="flush-collapseOne"
-            class="accordion-collapse collapse"
-            data-bs-parent="#accordionFlushExample"
-          >
-            <div class="accordion-body">
-              <input
-                class="form-control mb-3"
-                placeholder="Sueldo"
-                type="number"
-                [ngModel]="data.sueldo"
-                (ngModelChange)="data.sueldo = $event"
-                [class.is-invalid]="!data.sueldo && intentoEnviar"
-              />
-
-              <input
-                class="form-control mb-3"
-                placeholder="Ingreso Extra"
-                type="number"
-                [ngModel]="data.ingresoExtra"
-                (ngModelChange)="data.ingresoExtra = $event"
-                [class.is-invalid]="!data.ingresoExtra && intentoEnviar"
-              />
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseTwo"
-              aria-expanded="false"
-              aria-controls="flush-collapseTwo"
-            >
-              GASTOS
-            </button>
-          </h2>
-          <div
-            id="flush-collapseTwo"
-            class="accordion-collapse collapse"
-            data-bs-parent="#accordionFlushExample"
-          >
-            <div class="accordion-body">
-              <input
-                class="form-control mb-3"
-                placeholder="Vivienda"
-                type="number"
-                [ngModel]="data.gastos.vivienda"
-                (ngModelChange)="data.gastos.vivienda = $event"
-                [class.is-invalid]="!data.gastos.vivienda && intentoEnviar"
-              />
-
-              <input
-                class="form-control mb-3"
-                placeholder="Comida"
-                type="number"
-                [ngModel]="data.gastos.comida"
-                (ngModelChange)="data.gastos.comida = $event"
-                [class.is-invalid]="!data.gastos.comida && intentoEnviar"
-              />
-
-              <input
-                class="form-control mb-3"
-                placeholder="Transporte"
-                type="number"
-                [ngModel]="data.gastos.transporte"
-                (ngModelChange)="data.gastos.transporte = $event"
-                [class.is-invalid]="!data.gastos.transporte && intentoEnviar"
-              />
-
-              <input
-                class="form-control mb-3"
-                placeholder="Ocio"
-                type="number"
-                [ngModel]="data.gastos.ocio"
-                (ngModelChange)="data.gastos.ocio = $event"
-                [class.is-invalid]="!data.gastos.ocio && intentoEnviar"
-              />
-
-              <input
-                class="form-control mb-3"
-                placeholder="Otros"
-                type="number"
-                [ngModel]="data.gastos.otros"
-                (ngModelChange)="data.gastos.otros = $event"
-              />
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseThree"
-              aria-expanded="false"
-              aria-controls="flush-collapseThree"
-            >
-              TIEMPO TRABAJO
-            </button>
-          </h2>
-          <div
-            id="flush-collapseThree"
-            class="accordion-collapse collapse"
-            data-bs-parent="#accordionFlushExample"
-          >
-            <div class="accordion-body">
-              <input
-                class="form-control mb-3"
-                placeholder="Horas/día"
-                type="number"
-                [ngModel]="data.horasTrabajoDia"
-                (ngModelChange)="data.horasTrabajoDia = $event"
-                [class.is-invalid]="!data.horasTrabajoDia && intentoEnviar"
-              />
-
-              <input
-                class="form-control mb-3"
-                placeholder="Días/mes"
-                type="number"
-                [ngModel]="data.diasTrabajoMes"
-                (ngModelChange)="data.diasTrabajoMes = $event"
-                [class.is-invalid]="!data.diasTrabajoMes && intentoEnviar"
-              />
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseFour"
-              aria-expanded="false"
-              aria-controls="flush-collapseFour"
-            >
-              DATOS
-            </button>
-          </h2>
-          <div
-            id="flush-collapseFour"
-            class="accordion-collapse collapse"
-            data-bs-parent="#accordionFlushExample"
-          >
-            <div class="accordion-body">
-              <select
-                [(ngModel)]="data.tipoPersona"
-                class="form-select form-control mb-3"
-                [class.is-invalid]="!data.tipoPersona && intentoEnviar"
-              >
-                <option value="">Tipo persona</option>
-                <option value="DEPENDIENTE">Dependiente</option>
-                <option value="INDEPENDIENTE">Independiente</option>
-              </select>
-
-              <input
-                class="form-control mb-3"
-                placeholder="deuda Total"
-                type="number"
-                [ngModel]="data.deudaTotal"
-                (ngModelChange)="data.deudaToral = $event"
-              />
-              <input
-                class="form-control mb-3"
-                placeholder="ahorros"
-                type="number"
-                [ngModel]="data.ahorros"
-                (ngModelChange)="data.ahorros = $event"
-              />
-
-              <input
-                class="form-control mb-3"
-                placeholder="horas Libres"
-                type="number"
-                [ngModel]="data.horasLibresDia"
-                (ngModelChange)="data.horasLibresDia = $event"
-              />
-
-              <input
-                class="form-control mb-3"
-                placeholder="horas Libres"
-                type="number"
-                [ngModel]="data.nivelEstres"
-                (ngModelChange)="data.nivelEstres = $event"
-              />
-
-              <input
-                class="form-control mb-3"
-                placeholder="objetivo"
-                type="text"
-                [ngModel]="data.objetivo"
-                (ngModelChange)="data.objetivo = $event"
-              />
-
-              <input
-                class="form-control mb-3"
-                placeholder="Meses cubrir deuda"
-                type="text"
-                [ngModel]="data.mesesObjetivoDeuda"
-                (ngModelChange)="data.mesesObjetivoDeuda = $event"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <button type="button" class="btn btn-custom mt-3" (click)="calcular()">Calcular</button>
-  </div>
-
-  <!-- RESULTADO -->
-  <div *ngIf="resultado" class="card mt-5 shadow-lg border-0 p-4">
-    <h4 class="mb-4 text-success">Resultado</h4>
-
-    <div class="row text-center g-3">
-      <div class="col-md-3">
-        <div class="p-3 bg-light rounded">
-          <strong>Ahorro</strong><br />
-          {{ resultado.ahorroMensual }}
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="p-3 bg-light rounded">
-          <strong>Estado</strong><br />
-          {{ resultado.estadoFinanciero }}
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="p-3 bg-light rounded">
-          <strong>Vida</strong><br />
-          {{ resultado.estadoVida }}
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="p-3 bg-light rounded">
-          <strong>Gasto Total</strong><br />
-          {{ resultado.gastoTotal }}
-        </div>
-      </div>
-    </div>
-
-    <p class="mt-4 text-center fw-semibold">
-      {{ resultado.mensajePrincipal }}
+    <p>
+      Usa la calculadora de presupuesto mensual para ver como tus ingresos se dividen entre gastos
+      principales y ahorros.
     </p>
 
-    <button class="btn btn-success w-100 fw-bold" (click)="descargarPDF()">Descargar PDF</button>
+    <button class="btn btn-custom mt-3" (click)="irAnalizador()">Empezar análisis</button>
+  </div>
+
+  <div class="hero-right">
+    <img src="img2.jpg" alt="finanzas" />
   </div>
 </div>
+
+<p class="mt-4 text-center fw-semibold text-muted">
+  {{ resultado.mensajePrincipal }}
+</p>
+
+<div id="analizador" class="container mt-5">
+  <div class="row">
+    <!-- IZQUIERDA (FORMULARIO) -->
+    <div class="col-md-5">
+      <div class="card shadow-lg border-0 p-4">
+        <h4 class="mb-4 text-dark">Analizador de Vida</h4>
+
+        <div class="isquierda">
+          <!-- IZQUIERDA -->
+
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseOne"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseOne"
+                >
+                  INGRESOS
+                </button>
+              </h2>
+              <div
+                id="flush-collapseOne"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordionFlushExample"
+              >
+                <div class="accordion-body">
+                  <input
+                    class="form-control mb-3"
+                    placeholder="Sueldo"
+                    type="number"
+                    [ngModel]="data.sueldo"
+                    (ngModelChange)="data.sueldo = $event"
+                    [class.is-invalid]="!data.sueldo && intentoEnviar"
+                  />
+
+                  <input
+                    class="form-control mb-3"
+                    placeholder="Ingreso Extra"
+                    type="number"
+                    [ngModel]="data.ingresoExtra"
+                    (ngModelChange)="data.ingresoExtra = $event"
+                    [class.is-invalid]="!data.ingresoExtra && intentoEnviar"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseTwo"
+                >
+                  GASTOS
+                </button>
+              </h2>
+              <div
+                id="flush-collapseTwo"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordionFlushExample"
+              >
+                <div class="accordion-body">
+                  <input
+                    class="form-control mb-3"
+                    placeholder="Vivienda"
+                    type="number"
+                    [ngModel]="data.gastos.vivienda"
+                    (ngModelChange)="data.gastos.vivienda = $event"
+                    [class.is-invalid]="!data.gastos.vivienda && intentoEnviar"
+                  />
+
+                  <input
+                    class="form-control mb-3"
+                    placeholder="Comida"
+                    type="number"
+                    [ngModel]="data.gastos.comida"
+                    (ngModelChange)="data.gastos.comida = $event"
+                    [class.is-invalid]="!data.gastos.comida && intentoEnviar"
+                  />
+
+                  <input
+                    class="form-control mb-3"
+                    placeholder="Transporte"
+                    type="number"
+                    [ngModel]="data.gastos.transporte"
+                    (ngModelChange)="data.gastos.transporte = $event"
+                    [class.is-invalid]="!data.gastos.transporte && intentoEnviar"
+                  />
+
+                  <input
+                    class="form-control mb-3"
+                    placeholder="Ocio"
+                    type="number"
+                    [ngModel]="data.gastos.ocio"
+                    (ngModelChange)="data.gastos.ocio = $event"
+                    [class.is-invalid]="!data.gastos.ocio && intentoEnviar"
+                  />
+
+                  <input
+                    class="form-control mb-3"
+                    placeholder="Otros"
+                    type="number"
+                    [ngModel]="data.gastos.otros"
+                    (ngModelChange)="data.gastos.otros = $event"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseThree"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseThree"
+                >
+                  TIEMPO TRABAJO
+                </button>
+              </h2>
+              <div
+                id="flush-collapseThree"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordionFlushExample"
+              >
+                <div class="accordion-body">
+                  <input
+                    class="form-control mb-3"
+                    placeholder="Horas/día"
+                    type="number"
+                    [ngModel]="data.horasTrabajoDia"
+                    (ngModelChange)="data.horasTrabajoDia = $event"
+                    [class.is-invalid]="!data.horasTrabajoDia && intentoEnviar"
+                  />
+
+                  <input
+                    class="form-control mb-3"
+                    placeholder="Días/mes"
+                    type="number"
+                    [ngModel]="data.diasTrabajoMes"
+                    (ngModelChange)="data.diasTrabajoMes = $event"
+                    [class.is-invalid]="!data.diasTrabajoMes && intentoEnviar"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseFour"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseFour"
+                >
+                  DATOS
+                </button>
+              </h2>
+              <div
+                id="flush-collapseFour"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordionFlushExample"
+              >
+                <div class="accordion-body">
+                  <select
+                    [(ngModel)]="data.tipoPersona"
+                    class="form-select form-control mb-3"
+                    [class.is-invalid]="!data.tipoPersona && intentoEnviar"
+                  >
+                    <option value="">Tipo persona</option>
+                    <option value="DEPENDIENTE">Dependiente</option>
+                    <option value="INDEPENDIENTE">Independiente</option>
+                  </select>
+
+                  <input
+                    class="form-control mb-3"
+                    placeholder="deuda Total"
+                    type="number"
+                    [ngModel]="data.deudaTotal"
+                    (ngModelChange)="data.deudaToral = $event"
+                  />
+                  <input
+                    class="form-control mb-3"
+                    placeholder="ahorros"
+                    type="number"
+                    [ngModel]="data.ahorros"
+                    (ngModelChange)="data.ahorros = $event"
+                  />
+
+                  <input
+                    class="form-control mb-3"
+                    placeholder="horas Libres"
+                    type="number"
+                    [ngModel]="data.horasLibresDia"
+                    (ngModelChange)="data.horasLibresDia = $event"
+                  />
+
+                  <input
+                    class="form-control mb-3"
+                    placeholder="horas Libres"
+                    type="number"
+                    [ngModel]="data.nivelEstres"
+                    (ngModelChange)="data.nivelEstres = $event"
+                  />
+
+                  <input
+                    class="form-control mb-3"
+                    placeholder="objetivo"
+                    type="text"
+                    [ngModel]="data.objetivo"
+                    (ngModelChange)="data.objetivo = $event"
+                  />
+
+                  <input
+                    class="form-control mb-3"
+                    placeholder="Meses cubrir deuda"
+                    type="text"
+                    [ngModel]="data.mesesObjetivoDeuda"
+                    (ngModelChange)="data.mesesObjetivoDeuda = $event"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-custom mt-3" (click)="calcular()">Calcular</button>
+      </div>
+    </div>
+
+    <!-- DERECHA-->
+
+    <div class="col-md-7">
+      <!-- RESULTADO -->
+      <div class="card mt-5 shadow-lg border-0 p-4">
+        <h4 class="mb-4 text-success">Resultado</h4>
+
+        <div class="row text-center g-3">
+          <div class="col-md-3">
+            <div class="p-3 bg-light rounded">
+              <strong>Ahorro</strong><br />
+              {{ resultado.ahorroMensual }}
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="p-3 bg-light rounded">
+              <strong>Estado</strong><br />
+              {{ resultado.estadoFinanciero }}
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="p-3 bg-light rounded">
+              <strong>Vida</strong><br />
+              {{ resultado.estadoVida }}
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="p-3 bg-light rounded">
+              <strong>Gasto Total</strong><br />
+              {{ resultado.gastoTotal }}
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-4 text-center fw-semibold">
+          {{ resultado.mensajePrincipal }}
+        </p>
+
+        <button class="btn btn-success w-100 fw-bold" (click)="descargarPDF()">
+          Descargar PDF
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="text-white pt-4 mt-5">
+  <div class="container">
+    <div class="row">
+      <!-- Empresa -->
+      <div class="col-md-4">
+        <h5>Financiera Juan</h5>
+        <p>Tu herramienta para mejorar tus finanzas personales.</p>
+      </div>
+
+      <!-- Links -->
+      <div class="col-md-4">
+        <h5>Enlaces</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white">Analizador</a></li>
+          <li><a href="#" class="text-white">Historial</a></li>
+        </ul>
+      </div>
+
+      <!-- Contacto -->
+      <div class="col-md-4">
+        <h5>Contacto</h5>
+        <p>Email: aldairbroncanosotelo@gmail.com</p>
+      </div>
+    </div>
+
+    <hr class="bg-light" />
+
+    <div class="text-center pb-3">© 2026 Financiera Juan</div>
+  </div>
+</footer>
