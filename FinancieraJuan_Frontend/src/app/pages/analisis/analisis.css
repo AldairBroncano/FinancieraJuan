@@ -82,7 +82,14 @@ body {
   background: #e5e8eb;
 }
 
-.I {
+.card2 {
+  border-radius: 9px;
+  background: #366185;
+}
+
+.caja {
+  background: #2b4d69;
+  color: white;
 }
 
 input,
@@ -112,7 +119,7 @@ button:hover {
 }
 
 footer {
-  background: linear-gradient(90deg, #294b66, #2f5675);
+  background: linear-gradient(90deg, #294b66, #366185);
 }
 
 footer a {

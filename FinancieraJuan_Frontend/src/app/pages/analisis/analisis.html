@@ -44,11 +44,11 @@
 </p>
 
 <div id="analizador" class="container mt-5">
-  <div class="row">
+  <div class="row justify-content-center">
     <!-- IZQUIERDA (FORMULARIO) -->
     <div class="col-md-5">
       <div class="card shadow-lg border-0 p-4">
-        <h4 class="mb-4 text-dark">Analizador de Vida</h4>
+        <h4 class="mb-4 text-dark text-center">Analizador de Vida</h4>
 
         <div class="isquierda">
           <!-- IZQUIERDA -->
@@ -88,7 +88,6 @@
                     type="number"
                     [ngModel]="data.ingresoExtra"
                     (ngModelChange)="data.ingresoExtra = $event"
-                    [class.is-invalid]="!data.ingresoExtra && intentoEnviar"
                   />
                 </div>
               </div>
@@ -145,7 +144,6 @@
                     type="number"
                     [ngModel]="data.gastos.ocio"
                     (ngModelChange)="data.gastos.ocio = $event"
-                    [class.is-invalid]="!data.gastos.ocio && intentoEnviar"
                   />
 
                   <input
@@ -217,11 +215,7 @@
                 data-bs-parent="#accordionFlushExample"
               >
                 <div class="accordion-body">
-                  <select
-                    [(ngModel)]="data.tipoPersona"
-                    class="form-select form-control mb-3"
-                    [class.is-invalid]="!data.tipoPersona && intentoEnviar"
-                  >
+                  <select [(ngModel)]="data.tipoPersona" class="form-select form-control mb-3">
                     <option value="">Tipo persona</option>
                     <option value="DEPENDIENTE">Dependiente</option>
                     <option value="INDEPENDIENTE">Independiente</option>
@@ -285,48 +279,81 @@
 
     <!-- DERECHA-->
 
-    <div class="col-md-7">
+    <div class="col-md-5">
       <!-- RESULTADO -->
-      <div class="card mt-5 shadow-lg border-0 p-4">
-        <h4 class="mb-4 text-success">Resultado</h4>
+      <div class="card2 mt-8 shadow-lg border-0 p-4 resultado">
+        <h4 class="mb-4 text-center text-white">Resultado</h4>
 
-        <div class="row text-center g-3">
-          <div class="col-md-3">
-            <div class="p-3 bg-light rounded">
+        <div class="row text-center g-2">
+          <div class="col-md-6">
+            <div class="p-3 caja rounded">
               <strong>Ahorro</strong><br />
               {{ resultado.ahorroMensual }}
             </div>
           </div>
 
-          <div class="col-md-3">
-            <div class="p-3 bg-light rounded">
+          <div class="col-md-6">
+            <div class="p-3 caja rounded">
               <strong>Estado</strong><br />
               {{ resultado.estadoFinanciero }}
             </div>
           </div>
 
-          <div class="col-md-3">
-            <div class="p-3 bg-light rounded">
+          <div class="col-md-6">
+            <div class="p-3 caja rounded">
               <strong>Vida</strong><br />
               {{ resultado.estadoVida }}
             </div>
           </div>
 
-          <div class="col-md-3">
-            <div class="p-3 bg-light rounded">
+          <div class="col-md-6">
+            <div class="p-3 caja rounded">
               <strong>Gasto Total</strong><br />
               {{ resultado.gastoTotal }}
             </div>
           </div>
+
+          <div class="col-md-6">
+            <div class="p-3 caja rounded">
+              <strong>Indice de vida</strong><br />
+              {{ resultado.indiceVida }}
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="p-3 caja rounded">
+              <strong>Salir de deuda</strong><br />
+              {{ resultado.mesesParaSalirDeuda }}
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="p-3 caja rounded">
+              <strong>% de Gasto</strong><br />
+              {{ resultado.porcentajeGasto }}
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="p-3 caja rounded">
+              <strong>Salario x hora</strong><br />
+              {{ resultado.salarioHora }}
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="p-3 caja rounded">
+              <strong>Recomendaciones</strong><br />
+              {{ resultado.recomendaciones }}
+            </div>
+          </div>
         </div>
 
-        <p class="mt-4 text-center fw-semibold">
+        <p class="mt-4 text-center text-white fw-semibold">
           {{ resultado.mensajePrincipal }}
         </p>
 
-        <button class="btn btn-success w-100 fw-bold" (click)="descargarPDF()">
-          Descargar PDF
-        </button>
+        <button class="btn btn-info w-100 fw-bold" (click)="descargarPDF()">Descargar PDF</button>
       </div>
     </div>
   </div>

@@ -42,7 +42,12 @@ export class AnalisisComponent {
     estadoFinanciero: '-',
     estadoVida: '-',
     gastoTotal: 0,
+    indiceVida: '-',
     mensajePrincipal: 'Completa los datos y presiona calcular',
+    mesesParaSalirDeuda: 0,
+    porcentajeGasto: 0,
+    recomendaciones: '-',
+    salarioHora: 0,
   };
 
   intentoEnviar = false;
@@ -52,15 +57,13 @@ export class AnalisisComponent {
     this.intentoEnviar = true;
 
     if (!this.data.sueldo) return;
-    if (!this.data.ingresoExtra) return;
+
     if (!this.data.horasTrabajoDia) return;
     if (!this.data.diasTrabajoMes) return;
-    if (!this.data.tipoPersona) return;
 
     if (!this.data.gastos.vivienda) return;
     if (!this.data.gastos.comida) return;
     if (!this.data.gastos.transporte) return;
-    if (!this.data.gastos.ocio) return;
 
     const limpiarNumero = (v: any) => (isNaN(v) || v === null ? 0 : v);
 
@@ -111,6 +114,11 @@ export class AnalisisComponent {
 
   descargarPDF() {
     const DATA: any = document.querySelector('.resultado');
+
+    if (!DATA) {
+      console.error('No se encontró el elemento para el PDF');
+      return;
+    }
 
     html2canvas(DATA).then((canvas) => {
       const imgWidth = 208;

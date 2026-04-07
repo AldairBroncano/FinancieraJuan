@@ -59,7 +59,7 @@ public class AnalisisService {
 
         // Mensaje
         String mensaje = "Tu situación es " + estadoFinanciero.toLowerCase() +
-                ", y tu estado de vida es " + estadoVida.toLowerCase();
+                ", y tu estado de vida es " + estadoVida.toLowerCase() + " ";
 
         // Recomendaciones
         List<String> recomendaciones = new ArrayList<>();
