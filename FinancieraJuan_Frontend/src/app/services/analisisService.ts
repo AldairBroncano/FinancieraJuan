@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AnalisisService {
-  private apiUrl = 'http://localhost:8080/api/calcular';
+  private apiUrl = 'https://financierajuan_backend.railway.app/';
 
   constructor(private http: HttpClient) {}
 
