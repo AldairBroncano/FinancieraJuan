@@ -6,11 +6,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AnalisisService {
-  private apiUrl = 'https://financierajuan_backend.railway.app';
+  private apiUrl = 'https://financierajuan_backend.up.railway.app';
 
   constructor(private http: HttpClient) {}
 
   calcular(data: any): Observable<any> {
-    return this.http.post(this.apiUrl, data);
+    return this.http.post('${this.apiUrl}/api/calcular', data);
   }
 }
