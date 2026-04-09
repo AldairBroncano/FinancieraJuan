@@ -44,15 +44,13 @@
           gastos principales y ahorros.
         </p>
 
-        <button class="btn btn-custom mt-3">Empezar análisis</button>
+        <button class="btn btn-custom mt-3" href="isquierda">Empezar análisis</button>
       </div>
     </div>
   </div>
 </div>
 
-<p class="mt-4 text-center fw-semibold text-muted">
-  {{ resultado.mensajePrincipal }}
-</p>
+<div class="top-bar text-center">🔒 Tus datos están seguros | Soporte 24/7</div>
 
 <div id="analizador" class="container mt-5">
   <div class="row justify-content-center">
@@ -64,45 +62,32 @@
         <div class="isquierda">
           <!-- IZQUIERDA -->
 
-          <div class="accordion accordion-flush" id="accordionFlushExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapseOne"
-                  aria-expanded="false"
-                  aria-controls="flush-collapseOne"
-                >
-                  INGRESOS
-                </button>
-              </h2>
-              <div
-                id="flush-collapseOne"
-                class="accordion-collapse collapse"
-                data-bs-parent="#accordionFlushExample"
-              >
-                <div class="accordion-body">
-                  <input
-                    class="form-control mb-3"
-                    placeholder="Sueldo"
-                    type="number"
-                    [ngModel]="data.sueldo"
-                    (ngModelChange)="data.sueldo = $event"
-                    [class.is-invalid]="!data.sueldo && intentoEnviar"
-                  />
+          <div class="mb-4 ingreso-card">
+            <h6 class="titulo-seccion text-center">Ingresos</h6>
 
-                  <input
-                    class="form-control mb-3"
-                    placeholder="Ingreso Extra"
-                    type="number"
-                    [ngModel]="data.ingresoExtra"
-                    (ngModelChange)="data.ingresoExtra = $event"
-                  />
-                </div>
-              </div>
+            <div class="input-group-custom">
+              <label>Sueldo</label>
+              <input
+                type="number"
+                placeholder="Ej: 1500"
+                [ngModel]="data.sueldo"
+                (ngModelChange)="data.sueldo = $event"
+                [class.is-invalid]="!data.sueldo && intentoEnviar"
+              />
             </div>
+
+            <div class="input-group-custom">
+              <label>Ingreso extra</label>
+              <input
+                type="number"
+                placeholder="Ej: 300"
+                [ngModel]="data.ingresoExtra"
+                (ngModelChange)="data.ingresoExtra = $event"
+              />
+            </div>
+          </div>
+
+          <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">
               <h2 class="accordion-header">
                 <button
@@ -123,7 +108,7 @@
               >
                 <div class="accordion-body">
                   <input
-                    class="form-control mb-3"
+                    class="form-control input-group-custo mb-3"
                     placeholder="Vivienda"
                     type="number"
                     [ngModel]="data.gastos.vivienda"

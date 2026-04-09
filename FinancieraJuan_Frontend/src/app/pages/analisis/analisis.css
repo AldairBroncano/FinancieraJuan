@@ -109,6 +109,13 @@ body {
   }
 }
 
+.top-bar {
+  background: #0b2477;
+  color: white;
+  padding: 5px;
+  font-size: 14px;
+}
+
 .card {
   border-radius: 9px;
   background: #e5e8eb;
@@ -124,9 +131,62 @@ body {
   color: white;
 }
 
+/* CARD */
+.ingreso-card {
+  background: #f8fafc;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* TÍTULO */
+.titulo-seccion {
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #0b2477;
+}
+
+/* INPUT GROUP */
+.input-group-custom {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.input-group-custom label {
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 5px;
+}
+
+/* INPUT */
+.input-group-custom input {
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 10px;
+  transition: 0.2s;
+  outline: none;
+}
+
+/* HOVER / FOCUS */
+.input-group-custom input:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
+}
+
+/* ERROR */
+.is-invalid {
+  border-color: #ef4444 !important;
+}
+
 input,
 select {
   border-radius: 10px !important;
+}
+
+input:hover {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
 }
 
 button {
