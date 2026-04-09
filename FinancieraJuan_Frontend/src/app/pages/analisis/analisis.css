@@ -9,22 +9,34 @@ body {
 
 /* NAVBAR */
 .custom-navbar {
-  background: linear-gradient(90deg, #020617, #0f172a);
+  background: white;
   border-bottom: 1px solid #1e293b;
 }
 
 /* LOGO */
 .navbar-brand {
-  color: #38bdf8 !important;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 /* LINKS */
 .nav-link {
-  color: #cbd5f5 !important;
+  color: #0b2477 !important;
   transition: 0.2s;
 }
 
+.nav-link:hover {
+  color: #38bdf8 !important;
+}
+
+/* USUARIO */
+.user {
+  font-size: 14px;
+  color: #0b2477;
+}
+
+.btn {
+  color: #0b2477;
+}
 .hero-container {
   display: flex;
   height: 90vh;
@@ -65,16 +77,6 @@ body {
 
 .row {
   align-items: flex-start;
-}
-
-.nav-link:hover {
-  color: #38bdf8 !important;
-}
-
-/* USUARIO */
-.user {
-  font-size: 14px;
-  color: #c6ccd3;
 }
 
 .card {
