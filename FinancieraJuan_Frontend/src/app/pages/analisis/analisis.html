@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg custom-navbar px-4">
-  <a class="navbar-brand" href="#">
-    <img src="FinancieraJuan.svg" alt="Financiera Juan" height="51" width="180" />
+<nav class="navbar navbar-expand-lg custom-navbar px-5">
+  <a class="navbar-brand d-flex align-items-center" href="#">
+    <img src="FinancieraJuan.svg" alt="Financiera Juan" class="logo" />
   </a>
 
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
@@ -27,20 +27,26 @@
   </div>
 </nav>
 
-<div class="hero-container">
-  <div class="hero-left">
-    <h1>Calculadora de gastos y presupuesto familiar</h1>
+<div class="container-fluid p-0">
+  <div class="row g-0 hero-row">
+    <!-- IMAGEN -->
+    <div class="col-12 col-lg-6 order-1 order-lg-2 hero-img">
+      <img src="img2.jpg" alt="finanzas" />
+    </div>
 
-    <p>
-      Usa la calculadora de presupuesto mensual para ver como tus ingresos se dividen entre gastos
-      principales y ahorros.
-    </p>
+    <!-- TEXTO -->
+    <div class="col-12 col-lg-6 order-2 order-lg-1 hero-text d-flex align-items-center">
+      <div class="contenido">
+        <h1>Calculadora de gastos y presupuesto familiar</h1>
 
-    <button class="btn btn-custom mt-3" (click)="irAnalizador()">Empezar análisis</button>
-  </div>
+        <p>
+          Usa la calculadora de presupuesto mensual para ver como tus ingresos se dividen entre
+          gastos principales y ahorros.
+        </p>
 
-  <div class="hero-right">
-    <img src="img2.jpg" alt="finanzas" />
+        <button class="btn btn-custom mt-3">Empezar análisis</button>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -251,7 +257,7 @@
 
                   <input
                     class="form-control mb-3"
-                    placeholder="horas Libres"
+                    placeholder="nivel de estres"
                     type="number"
                     [ngModel]="data.nivelEstres"
                     (ngModelChange)="data.nivelEstres = $event"

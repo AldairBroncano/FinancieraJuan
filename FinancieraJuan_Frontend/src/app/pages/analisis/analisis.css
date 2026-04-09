@@ -13,19 +13,44 @@ body {
   border-bottom: 1px solid #1e293b;
 }
 
-/* LOGO */
-.navbar-brand {
-  font-size: 20px;
+.logo {
+  height: 45px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Ajuste en mobile */
+@media (max-width: 768px) {
+  .logo {
+    height: 32px;
+  }
 }
 
 /* LINKS */
 .nav-link {
   color: #0b2477 !important;
-  transition: 0.2s;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background-color: #38bdf8;
+  transition: 0.3s;
 }
 
 .nav-link:hover {
   color: #38bdf8 !important;
+  transform: translateY(-2px);
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }
 
 /* USUARIO */
@@ -37,46 +62,51 @@ body {
 .btn {
   color: #0b2477;
 }
-.hero-container {
-  display: flex;
-  height: 90vh;
+
+.hero-row {
+  min-height: 100vh;
 }
 
-/* IZQUIERDA */
-.hero-left {
-  width: 50%;
-  background: #366185;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 60px;
-}
-
-.hero-left h1 {
-  font-size: 42px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.hero-left p {
-  font-size: 18px;
-  opacity: 0.9;
-}
-
-/* DERECHA */
-.hero-right {
-  width: 50%;
-}
-
-.hero-right img {
+/* IMAGEN */
+.hero-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.row {
-  align-items: flex-start;
+/* TEXTO */
+.hero-text {
+  background: #3f6b8c; /* más tipo N26 */
+  color: white;
+  padding: 90px;
+}
+
+.hero-text h1 {
+  font-size: 42px;
+  font-weight: bold;
+}
+
+.hero-text p {
+  font-size: 18px;
+  margin-top: 15px;
+  opacity: 0.9;
+}
+@media (max-width: 992px) {
+  .hero-row {
+    min-height: auto;
+  }
+
+  .hero-img img {
+    height: 260px;
+  }
+
+  .hero-text {
+    padding: 30px 20px;
+  }
+
+  .hero-text h1 {
+    font-size: 26px;
+  }
 }
 
 .card {
